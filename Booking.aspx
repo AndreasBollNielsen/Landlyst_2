@@ -1,28 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Booking.aspx.cs" Inherits="Landlyst_2.Booking" %>
+﻿<%@ Page Title="Booking" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Booking.aspx.cs" Inherits="Landlyst_2.Booking" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-
-    <h1>Book en Reservation</h1>
-
-    <h2>Værelses type</h2>
-    <select name="Choice">
-        <option value= "1">Enkelt værelse</option>
-        <option value="2">Standard dobbelt værelse</option>
-        <option value="3">Luksus dobbelt værelse</option>
-        <option value="4">Suite</option>
-    </select>
-    <input type="text" name="numrooms" value="" />
-
-
-    <%--<form id="form1" runat="server">
-        <div>
-        </div>
-    </form>--%>
-</body>
-</html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <h2><%: Title %>.</h2>
+    <h3>Your contact page.</h3>
+    
+    <address>
+        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>
+</asp:Content>
