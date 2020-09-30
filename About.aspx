@@ -12,7 +12,28 @@
 
         Vestibulum viverra sem nec turpis accumsan aliquam. Morbi molestie scelerisque justo sed ornare. Sed sem mi, dictum commodo scelerisque eget, sodales eget elit. Curabitur porttitor lacinia sapien. Mauris ac dapibus odio. Morbi vulputate nulla vel mi ornare euismod ac malesuada risus.
     </p>
+    <%--<div class ="row">
+        <div class ="col">
+            <img src="Content/img/facade.png" alt="Alternate Text"/>
+        </div>
+          <div class ="col">
+            <img src="Content/img/facade.png" alt="Alternate Text"/>
+        </div>
+    </div>--%>
 
-    <img src="Content/img/facade.png" alt="Alternate Text" />
+
+    <div class="row">
+       
+        <div class="col-lg-6">
+            <img src="Content/img/facade.png" alt="Alternate Text"/>
+        </div>
+      
+        <div class="col-lg-6">
+            <img src="Content/img/facade.png" alt="Alternate Text"/>
+        </div>
+       
+
+    </div>
+    
 
 </asp:Content>
