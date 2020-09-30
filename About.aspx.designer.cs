@@ -7,21 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Landlyst_2 {
-    
-    
-    public partial class About {
-        
-        /// <summary>
-        /// Master property.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated property.
-        /// </remarks>
-        public new Landlyst_2.SiteMaster Master {
-            get {
-                return ((Landlyst_2.SiteMaster)(base.Master));
-            }
-        }
+namespace Landlyst_2
+{
+
+
+    public partial class About
+    {
     }
 }
