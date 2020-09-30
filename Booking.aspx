@@ -12,10 +12,10 @@
 
     <h2>Værelses type</h2>
     <select name="Choice">
-        <option value= 1>Enkelt værelse</option>
-        <option value=2>Standard dobbelt værelse</option>
-        <option value=3>Luksus dobbelt værelse</option>
-        <option value=>Suite</option>
+        <option value= "1">Enkelt værelse</option>
+        <option value="2">Standard dobbelt værelse</option>
+        <option value="3">Luksus dobbelt værelse</option>
+        <option value="4">Suite</option>
     </select>
     <input type="text" name="numrooms" value="" />
 
