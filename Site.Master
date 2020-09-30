@@ -64,7 +64,23 @@
             </asp:ContentPlaceHolder>
             <hr />
         </div>
+        <footer>
+            <address>
 
+                Lystvejen 41<br />
+                5856 Ryslinge <br />
+                +45 38 30 40 53 <br />
+                web@landlyst.com
+            </address>
+            <div class="icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-credit-card"></i>
+                <i class="fab fa-cc-apple-pay"></i>
+            </div>
+
+        </footer>
     </form>
+    <scriptsrc="https://kit.fontawsome.com/3ebd07176b.js" crossorigin="anonymous"></scriptsrc>
 </body>
 </html>
