@@ -15,7 +15,13 @@ namespace Landlyst_2
         {
             manager = new BookingManager();
             manager.CreateRoom();
-            singleRoom.con
+
+            //get selected room
+           string value = singleRoom.Value;
+
+
+            bool Selectedroom = singleRoom.Checked;
+          //  if(Selectedroom)
         }
 
         
