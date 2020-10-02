@@ -5,7 +5,7 @@
     <h3>Begynd din ferie her</h3>
     <form class="booking">
         <h4>Vælg dit værelse</h4>
-        <asp:RadioButtonList ID="chooseRoom" runat="server">
+        <asp:RadioButtonList ID="chooseRoom" runat="server" AutoPostBack="true" OnSelectedIndexChanged ="chooseRoom_SelectedIndexChanged">
             <asp:ListItem> Enkelt værelse</asp:ListItem>
             <asp:ListItem> Dobbelt værelse</asp:ListItem>
             <asp:ListItem> Dobbelt Luxus Værelse</asp:ListItem>
@@ -17,7 +17,7 @@
         <asp:Calendar ID="endDate" runat="server"></asp:Calendar>
        
         <h4>Tilvalg</h4>
-        <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+        <asp:CheckBoxList ID="CheckBoxList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged ="CheckBoxList1_SelectedIndexChanged">
             <asp:ListItem> All-in-one (<a href="#">golf tilbud læs mere her</a>) </asp:ListItem>
             <asp:ListItem> Minibar</asp:ListItem>
             <asp:ListItem> Aircondition</asp:ListItem>
