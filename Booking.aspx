@@ -4,7 +4,7 @@
     <h2><%: Title %>.</h2>
     <h3>Begynd din ferie her</h3>
     
-    <form>
+    <form id="bookingInformation">
         <h4>Vælg dit værelse</h4>
         <input type="radio" id="singleRoom" name="room"/>
         <label for="singleRoom">Enkeltværelse</label><br />
@@ -30,5 +30,17 @@
         <input type="checkbox" id="pet" name="adds" />
         <label for="adds">Kæledyr</label><br />
     </form>
+
+    <form id="personInformation">
+        <label for="firstName">For navn</label><br />
+        <input type="text" id="firstName" name="firstName" /><br />
+        <label for="lastName">Efter navn</label><br />
+        <input type="text" id="lastName" name="lastName" /><br />
+
+
+
+
+    </form>
+    
 
 </asp:Content>
