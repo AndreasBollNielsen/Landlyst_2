@@ -3,36 +3,30 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
     <h3>Begynd din ferie her</h3>
-    
-    <form id="bookingInformation">
+    <form class="booking">
         <h4>Vælg dit værelse</h4>
-        <input type="radio" id="singleRoom" name="room" runat="server"/>
-        <label for="singleRoom">Enkeltværelse</label><br />
-        <input type="radio" id="doubleRoom" name="room" runat="server"  />
-        <label for="doubleRoom">Dobbelt værelse</label><br />
-        <input type="radio" id="doubleLuxusRoom" name="room" runat="server"/>
-        <label for="doubleLuxusRoom">Dobbel Luxus værelse</label><br />
-        <input type="radio" id="suite" name="room" runat="server" />
-        <label for="suite">Suite</label> <br />
-
+        <asp:RadioButtonList ID="chooseRoom" runat="server">
+            <asp:ListItem> Enkelt værelse</asp:ListItem>
+            <asp:ListItem> Dobbelt værelse</asp:ListItem>
+            <asp:ListItem> Dobbelt Luxus Værelse</asp:ListItem>
+            <asp:ListItem> Suite</asp:ListItem>
+        </asp:RadioButtonList>
         <label for="startDate">Vælg Ankomst dag</label><br />
-        <input type="date" id="startDate" name="startDate" runat="server" /> <br />
+        <asp:Calendar ID="starteDate" runat="server"></asp:Calendar>
         <label for="endDate">Vælg afrejse dag</label><br />
-        <input type="date" id="endDate" name="endDate" runat="server"/>
-
+        <asp:Calendar ID="endDate" runat="server"></asp:Calendar>
+       
         <h4>Tilvalg</h4>
-        <input type="checkbox" id="golf" name="adds" runat="server"/>
-        <label for="adds">All-in-one ( <a href="#">golf tilbud læs mere her</a>)</label><br />
-        <input type="checkbox" id="minibar" name="adds" runat="server" />
-        <label for="adds">Minibar</label><br />
-        <input type="checkbox" id="aircondition" name="adds" runat="server"/>
-        <label for="adds">Aircondition</label><br />
-        <input type="checkbox" id="pet" name="adds"  runat="server"/>
-        <label for="adds">Kæledyr</label><br />
+        <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+            <asp:ListItem> All-in-one (<a href="#">golf tilbud læs mere her</a>) </asp:ListItem>
+            <asp:ListItem> Minibar</asp:ListItem>
+            <asp:ListItem> Aircondition</asp:ListItem>
+            <asp:ListItem> K&#230;ledyr</asp:ListItem>
+        </asp:CheckBoxList>
     </form>
 
   
-    <form id="personInformation">
+    <form class="booking">
      <h4>Om dig</h4>
         <label for="firstName">For navn</label><br />
         <input type="text" id="firstName" name="firstName" runat="server" /><br />

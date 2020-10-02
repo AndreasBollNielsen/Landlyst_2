@@ -17,10 +17,10 @@ namespace Landlyst_2
             manager.CreateRoom();
 
             //get selected room
-           string value = singleRoom.Value;
+          //string value = singleRoom.Value;
 
 
-            bool Selectedroom = singleRoom.Checked;
+          //  bool Selectedroom = singleRoom.Checked;
           //  if(Selectedroom)
         }
 

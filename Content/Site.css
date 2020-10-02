@@ -39,3 +39,12 @@ footer{
     padding: 20px;
     background-color: darkgray;
 }
+
+* {
+    box-sizing: border-box;
+}
+form .booking {
+    float: left;
+    width: 50%;
+   
+} 
