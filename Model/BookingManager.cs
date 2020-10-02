@@ -19,6 +19,8 @@ namespace Landlyst_2.Model
             BookedRoom = new Room();
         }
 
+        
+
         // executes the booking with the data from room object. Using stored Procedure to add data into database
         public DataTable CreateReservation()
         {

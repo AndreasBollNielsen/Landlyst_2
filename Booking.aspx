@@ -6,7 +6,7 @@
     
     <form>
         <h4>Vælg dit værelse</h4>
-        <input type="radio" id="singleRoom" name="room"/>
+        <input type="radio" id="singleRoom" name="room" runat="server"/>
         <label for="singleRoom">Enkeltværelse</label><br />
         <input type="radio" id="doubleRoom" name="room" />
         <label for="doubleRoom">Dobbelt værelse</label><br />
