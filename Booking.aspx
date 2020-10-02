@@ -8,34 +8,34 @@
         <h4>Vælg dit værelse</h4>
         <input type="radio" id="singleRoom" name="room" runat="server"/>
         <label for="singleRoom">Enkeltværelse</label><br />
-        <input type="radio" id="doubleRoom" name="room" />
+        <input type="radio" id="doubleRoom" name="room" runat="server"  />
         <label for="doubleRoom">Dobbelt værelse</label><br />
-        <input type="radio" id="doubleLuxusRoom" name="room" />
+        <input type="radio" id="doubleLuxusRoom" name="room" runat="server"/>
         <label for="doubleLuxusRoom">Dobbel Luxus værelse</label><br />
-        <input type="radio" id="suite" name="room" />
+        <input type="radio" id="suite" name="room" runat="server" />
         <label for="suite">Suite</label> <br />
 
         <label for="startDate">Vælg Ankomst dag</label><br />
-        <input type="date" id="startDate" name="startDate" /> <br />
+        <input type="date" id="startDate" name="startDate" runat="server" /> <br />
         <label for="endDate">Vælg afrejse dag</label><br />
-        <input type="date" id="endDate" name="endDate" />
+        <input type="date" id="endDate" name="endDate" runat="server"/>
 
         <h4>Tilvalg</h4>
-        <input type="checkbox" id="golf" name="adds"/>
+        <input type="checkbox" id="golf" name="adds" runat="server"/>
         <label for="adds">All-in-one ( <a href="#">golf tilbud læs mere her</a>)</label><br />
-        <input type="checkbox" id="minibar" name="adds" />
+        <input type="checkbox" id="minibar" name="adds" runat="server" />
         <label for="adds">Minibar</label><br />
-        <input type="checkbox" id="aircondition" name="adds" />
+        <input type="checkbox" id="aircondition" name="adds" runat="server"/>
         <label for="adds">Aircondition</label><br />
-        <input type="checkbox" id="pet" name="adds" />
+        <input type="checkbox" id="pet" name="adds"  runat="server"/>
         <label for="adds">Kæledyr</label><br />
     </form>
 
     <form id="personInformation">
         <label for="firstName">For navn</label><br />
-        <input type="text" id="firstName" name="firstName" /><br />
+        <input type="text" id="firstName" name="firstName" runat="server" /><br />
         <label for="lastName">Efter navn</label><br />
-        <input type="text" id="lastName" name="lastName" /><br />
+        <input type="text" id="lastName" name="lastName" runat="server"/><br />
 
 
 
