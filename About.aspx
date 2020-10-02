@@ -1,4 +1,4 @@
-﻿´
+﻿
 <%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="Landlyst_2.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -13,16 +13,7 @@
 
         Vestibulum viverra sem nec turpis accumsan aliquam. Morbi molestie scelerisque justo sed ornare. Sed sem mi, dictum commodo scelerisque eget, sodales eget elit. Curabitur porttitor lacinia sapien. Mauris ac dapibus odio. Morbi vulputate nulla vel mi ornare euismod ac malesuada risus.
     </p>
-    <%--<div class ="row">
-        <div class ="col">
-            <img src="Content/img/facade.png" alt="Alternate Text"/>
-        </div>
-          <div class ="col">
-            <img src="Content/img/facade.png" alt="Alternate Text"/>
-        </div>
-    </div>--%>
-
-
+ 
     <div class="row">
        
         <div class="col-lg-6">

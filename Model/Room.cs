@@ -17,6 +17,7 @@ namespace Landlyst_2.Model
         bool minibar;
         bool aircondition;
         bool pet;
+        bool golf;
         RoomType.Type roomtype;
 
         // properties
@@ -28,6 +29,7 @@ namespace Landlyst_2.Model
         public bool Minibar { get => minibar; set => minibar = value; }
         public bool Aircondition { get => aircondition; set => aircondition = value; }
         public bool Pet { get => pet; set => pet = value; }
+        public bool Golf { get => golf; set => golf = value; }
         public RoomType.Type Roomtype { get => roomtype; set => roomtype = value; }
 
         //constructor

@@ -1,6 +1,7 @@
 ﻿using Landlyst_2.Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -36,11 +37,50 @@ namespace Landlyst_2
             }
 
 
+            //update arrivel/departure dates
+            string arrival = startDate.Value;
+            string departure = endDate.Value;
+            if(arrival != " " || departure !=" ")
+            {
+                Debug.WriteLine(arrival);
+                DateTime Arrivaldate = new DateTime();
+                DateTime Departuredate = new DateTime();
+               
+                Departuredate.AddDays(2);
+                if (Departuredate > Arrivaldate)
+                {
+                    //add dates to manager
+                    Debug.WriteLine($"arrival date{Arrivaldate} departure date{Departuredate}");
+                }
+                else
+                {
+                    // give error
+                    Debug.WriteLine("departure date is wrong");
+                    Debug.WriteLine($"arrival date{Arrivaldate} departure date{Departuredate}");
+                }
+            }
+            
 
+            //update extra commodities
+            if(golf.Checked)
+            {
+                manager.BookedRoom.Golf = true;
+            }
+            else if(minibar.Checked)
+            {
+                manager.BookedRoom.Minibar = true;
+            }
+            else if(aircondition.Checked)
+            {
+                manager.BookedRoom.Aircondition = true;
+            }
+            else if(pet.Checked)
+            {
+                manager.BookedRoom.Pet = true;
+            }
 
-           
         }
 
-
+        
     }
 }
