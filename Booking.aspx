@@ -1,28 +1,34 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Booking.aspx.cs" Inherits="Landlyst_2.Booking" %>
+﻿<%@ Page Title="Booking" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Booking.aspx.cs" Inherits="Landlyst_2.Booking" %>
 
-<!DOCTYPE html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <h2><%: Title %>.</h2>
+    <h3>Begynd din ferie her</h3>
+    
+    <form>
+        <h4>Vælg dit værelse</h4>
+        <input type="radio" id="singleRoom" name="room"/>
+        <label for="singleRoom">Enkeltværelse</label><br />
+        <input type="radio" id="doubleRoom" name="room" />
+        <label for="doubleRoom">Dobbelt værelse</label><br />
+        <input type="radio" id="doubleLuxusRoom" name="room" />
+        <label for="doubleLuxusRoom">Dobbel Luxus værelse</label><br />
+        <input type="radio" id="suite" name="room" />
+        <label for="suite">Suite</label> <br />
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
+        <label for="startDate">Vælg Ankomst dag</label><br />
+        <input type="date" id="startDate" name="startDate" /> <br />
+        <label for="endDate">Vælg afrejse dag</label><br />
+        <input type="date" id="endDate" name="endDate" />
 
-    <h1>Book en Reservation</h1>
+        <h4>Tilvalg</h4>
+        <input type="checkbox" id="golf" name="adds"/>
+        <label for="adds">All-in-one ( <a href="#">golf tilbud læs mere her</a>)</label><br />
+        <input type="checkbox" id="minibar" name="adds" />
+        <label for="adds">Minibar</label><br />
+        <input type="checkbox" id="aircondition" name="adds" />
+        <label for="adds">Aircondition</label><br />
+        <input type="checkbox" id="pet" name="adds" />
+        <label for="adds">Kæledyr</label><br />
+    </form>
 
-    <h2>Værelses type</h2>
-    <select name="Choice">
-        <option value= "1">Enkelt værelse</option>
-        <option value="2">Standard dobbelt værelse</option>
-        <option value="3">Luksus dobbelt værelse</option>
-        <option value="4">Suite</option>
-    </select>
-    <input type="text" name="numrooms" value="" />
-
-
-    <%--<form id="form1" runat="server">
-        <div>
-        </div>
-    </form>--%>
-</body>
-</html>
+</asp:Content>

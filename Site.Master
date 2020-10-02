@@ -39,6 +39,7 @@
         </asp:ScriptManager>
 
         <div class="navbar navbar-inverse navbar-fixed-top">
+
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -46,12 +47,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="navbar-brand" runat="server" href="~/">Landlyst</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Booking">Book</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
                 </div>
@@ -61,11 +63,24 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
         </div>
+        <footer>
+            <address>
 
+                Lystvejen 41<br />
+                5856 Ryslinge <br />
+                +45 38 30 40 53 <br />
+                web@landlyst.com
+            </address>
+            <div class="icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-credit-card"></i>
+                <i class="fab fa-cc-apple-pay"></i>
+            </div>
+
+        </footer>
     </form>
+    <script src="https://kit.fontawsome.com/3ebd07176b.js" crossorigin="anonymous"></script>
 </body>
 </html>

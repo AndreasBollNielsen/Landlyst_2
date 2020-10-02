@@ -1,7 +1,6 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 50px;
-    padding-bottom: 20px;
 }
 
 /* Wrapping element */
@@ -28,4 +27,15 @@ textarea {
     .body-content {
         padding: 0;
     }
+}
+
+.icons{
+    color: gray;
+    font-size: 40px;
+}
+
+footer{
+    flex-shrink: 0;
+    padding: 20px;
+    background-color: darkgray;
 }
