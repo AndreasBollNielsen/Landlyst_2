@@ -31,13 +31,27 @@
         <label for="adds">Kæledyr</label><br />
     </form>
 
+  
     <form id="personInformation">
+     <h4>Om dig</h4>
         <label for="firstName">For navn</label><br />
         <input type="text" id="firstName" name="firstName" runat="server" /><br />
         <label for="lastName">Efter navn</label><br />
         <input type="text" id="lastName" name="lastName" runat="server"/><br />
-
-
+        <label for="address">Adresse</label><br />
+        <input type="text" id="address" name="address" runat="server" /> <br />
+        <label for="zip">Postnummer</label><br />
+        <input type="number" id="zip" name="zip" runat="server" /><br />
+        <label for="city">By</label><br />
+        <input type="text" id="city" name="city" runat="server" /><br />
+        <label for="phone">Telefon nummer</label><br />
+        <input type="number" id="phone" name="phone" runat="server" /><br />
+        <label for="mail">E-Mail</label><br />
+        <input type="email" id="mail" name="mail" runat="server" /><br />
+        <label for="comment">Eventuel kommentar til din booking</label><br />
+        <input type="text" id="comment" name="comment" runat="server" /><br />
+        <input type="checkbox" id="acceptConditions" name="acceptConditions" runat="server" />
+        <label for="acceptConditions"><a href="#">Accepter vores handelsbetingelser og privatlivs politik</a></label>
 
 
     </form>
