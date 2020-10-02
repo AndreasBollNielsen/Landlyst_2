@@ -13,10 +13,13 @@ namespace Landlyst_2.Model
     public class BookingManager
     {
         public Room BookedRoom;
+        public Client Customer;
         // method to create a room and fill it with data
         public void CreateRoom()
         {
             BookedRoom = new Room();
+            Customer = new Client();
+            BookedRoom.Customer = Customer;
         }
 
         
@@ -28,6 +31,9 @@ namespace Landlyst_2.Model
            
             if(BookedRoom != null)
             {
+                //prepare data for database
+                
+
                 //run stored procedure 
                 con.Open();
                 SqlCommand cmd = new SqlCommand("SelectAll", con);
