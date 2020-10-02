@@ -14,7 +14,7 @@ namespace Landlyst_2.Model
         int phone;
         string address;
         int zipcode;
-        RoomType.Type roomtype;
+        
 
         //properties
         public string Firstname { get => firstname; set => firstname = value; }
@@ -23,12 +23,17 @@ namespace Landlyst_2.Model
         public int Phone { get => phone; set => phone = value; }
         public string Address { get => address; set => address = value; }
         public int Zipcode { get => zipcode; set => zipcode = value; }
-        public RoomType.Type Roomtype { get => roomtype; set => roomtype = value; }
+       
 
         //constructor
         public Client()
         {
-
+            firstname = Firstname;
+            lastname = Lastname;
+            email = Email;
+            phone = Phone;
+            address = Address;
+            zipcode = Zipcode;
         }
     }
 }

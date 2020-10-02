@@ -16,14 +16,31 @@ namespace Landlyst_2
             manager = new BookingManager();
             manager.CreateRoom();
 
-            //get selected room
-           string value = singleRoom.Value;
+           
+            //update selected room
+            if(singleRoom.Checked)
+            {
+                manager.BookedRoom.Roomtype = RoomType.Type.singleRoom;
+            }
+            else if(doubleRoom.Checked)
+            {
+                manager.BookedRoom.Roomtype = RoomType.Type.DoubleRoom;
+            }
+            else if (doubleLuxusRoom.Checked)
+            {
+                manager.BookedRoom.Roomtype = RoomType.Type.LuxuryRoom;
+            }
+            else if (suite.Checked)
+            {
+                manager.BookedRoom.Roomtype = RoomType.Type.Suite;
+            }
 
 
-            bool Selectedroom = singleRoom.Checked;
-          //  if(Selectedroom)
+
+
+           
         }
 
-        
+
     }
 }
