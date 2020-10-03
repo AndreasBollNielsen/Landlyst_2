@@ -28,24 +28,27 @@
   
     <form class="booking">
      <h4>Om dig</h4>
-        <label for="firstName">For navn</label><br />
-        <input type="text" id="firstName" name="firstName" runat="server" /><br />
-        <label for="lastName">Efter navn</label><br />
-        <input type="text" id="lastName" name="lastName" runat="server"/><br />
-        <label for="address">Adresse</label><br />
-        <input type="text" id="address" name="address" runat="server" /> <br />
-        <label for="zip">Postnummer</label><br />
-        <input type="number" id="zip" name="zip" runat="server" /><br />
-        <label for="city">By</label><br />
-        <input type="text" id="city" name="city" runat="server" /><br />
-        <label for="phone">Telefon nummer</label><br />
-        <input type="number" id="phone" name="phone" runat="server" /><br />
-        <label for="mail">E-Mail</label><br />
-        <input type="email" id="mail" name="mail" runat="server" /><br />
-        <label for="comment">Eventuel kommentar til din booking</label><br />
-        <input type="text" id="comment" name="comment" runat="server" /><br />
-        <input type="checkbox" id="acceptConditions" name="acceptConditions" runat="server" />
-        <label for="acceptConditions"><a href="#">Accepter vores handelsbetingelser og privatlivs politik</a></label>
+
+        <asp:Label for="firstname" runat="server" Text="Fornavn"></asp:Label><br />
+        <asp:TextBox ID="firstname" runat="server"></asp:TextBox><br />
+        <asp:Label for="lastname" runat="server" Text="Efternavn"></asp:Label><br />
+        <asp:TextBox ID="lastname" runat="server"></asp:TextBox><br />
+        <asp:Label for="address" runat="server" Text="Adresse"></asp:Label><br />
+        <asp:TextBox ID="address" runat="server"></asp:TextBox><br />
+        <asp:Label for="zipCode" runat="server" Text="Post nummer"></asp:Label><br />
+        <asp:TextBox type="number" ID="zipCode" runat="server"></asp:TextBox><br />
+        <asp:Label for="city" runat="server" Text="By"></asp:Label><br />
+        <asp:TextBox ID="city" runat="server"></asp:TextBox><br />
+        <asp:Label for="email" runat="server" Text="E-Mail"></asp:Label><br />
+        <asp:TextBox ID="email" runat="server"></asp:TextBox><br />
+        <asp:Label for="phone" runat="server" Text="Telefon nummer"></asp:Label><br />
+        <asp:TextBox type="number" ID="phone" runat="server"></asp:TextBox><br />
+        <asp:Label for="comment" runat="server" Text="Øvrige commentar"></asp:Label><br />
+        <asp:TextBox ID="comment" runat="server"></asp:TextBox><br />
+
+        <asp:CheckBox ID="accept" runat="server" />
+        <asp:Label for="accept" runat="server" Text=""><a href="#">Accepter handelsbetingelser og privatlivs politik</a></asp:Label>
+
 
 
     </form>

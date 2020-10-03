@@ -51,22 +51,22 @@ namespace Landlyst_2
         protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
 
         /// <summary>
-        /// firstName control.
+        /// firstname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText firstName;
+        protected global::System.Web.UI.WebControls.TextBox firstname;
 
         /// <summary>
-        /// lastName control.
+        /// lastname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText lastName;
+        protected global::System.Web.UI.WebControls.TextBox lastname;
 
         /// <summary>
         /// address control.
@@ -75,16 +75,16 @@ namespace Landlyst_2
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText address;
+        protected global::System.Web.UI.WebControls.TextBox address;
 
         /// <summary>
-        /// zip control.
+        /// zipCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl zip;
+        protected global::System.Web.UI.WebControls.TextBox zipCode;
 
         /// <summary>
         /// city control.
@@ -93,7 +93,16 @@ namespace Landlyst_2
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText city;
+        protected global::System.Web.UI.WebControls.TextBox city;
+
+        /// <summary>
+        /// email control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox email;
 
         /// <summary>
         /// phone control.
@@ -102,16 +111,7 @@ namespace Landlyst_2
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl phone;
-
-        /// <summary>
-        /// mail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl mail;
+        protected global::System.Web.UI.WebControls.TextBox phone;
 
         /// <summary>
         /// comment control.
@@ -120,15 +120,15 @@ namespace Landlyst_2
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText comment;
+        protected global::System.Web.UI.WebControls.TextBox comment;
 
         /// <summary>
-        /// acceptConditions control.
+        /// accept control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox acceptConditions;
+        protected global::System.Web.UI.WebControls.CheckBox accept;
     }
 }
