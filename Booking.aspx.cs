@@ -1,6 +1,7 @@
 ﻿using Landlyst_2.Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -16,14 +17,24 @@ namespace Landlyst_2
             manager = new BookingManager();
             manager.CreateRoom();
 
-            //get selected room
-          string value = singleRoom.Value;
-
-
-            bool Selectedroom = singleRoom.Checked;
-          //  if(Selectedroom)
+            
         }
 
-        
+        protected void chooseRoom_Event(object sender, EventArgs e)
+        {
+            Debug.WriteLine(sender.ToString());
+            string text = chooseRoom.SelectedValue;
+            Debug.WriteLine("hej");
+        }
+
+        protected void chooseRoom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Debug.WriteLine("changed");
+        }
+
+        protected void CheckBoxList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
