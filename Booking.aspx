@@ -5,7 +5,7 @@
     <h3>Begynd din ferie her</h3>
     <form class="booking">
         <h4>Vælg dit værelse</h4>
-        <asp:RadioButtonList ID="chooseRoom" runat="server" AutoPostBack="false" OnSelectedIndexChanged="chooseRoom_SelectedIndexChanged">
+        <asp:RadioButtonList ID="chooseRoom" runat="server" AutoPostBack="true" OnSelectedIndexChanged="chooseRoom_SelectedIndexChanged">
             <asp:ListItem> Enkelt værelse</asp:ListItem>
             <asp:ListItem> Dobbelt værelse</asp:ListItem>
             <asp:ListItem> Dobbelt Luxus Værelse</asp:ListItem>
