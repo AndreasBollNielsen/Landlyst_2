@@ -5,29 +5,29 @@
     <h3>Begynd din ferie her</h3>
     <form class="booking">
         <h4>Vælg dit værelse</h4>
-        <asp:RadioButtonList ID="chooseRoom" runat="server" AutoPostBack="true" OnSelectedIndexChanged ="chooseRoom_SelectedIndexChanged">
+        <asp:RadioButtonList ID="chooseRoom" runat="server" AutoPostBack="false" OnSelectedIndexChanged="chooseRoom_SelectedIndexChanged">
             <asp:ListItem> Enkelt værelse</asp:ListItem>
             <asp:ListItem> Dobbelt værelse</asp:ListItem>
             <asp:ListItem> Dobbelt Luxus Værelse</asp:ListItem>
             <asp:ListItem> Suite</asp:ListItem>
         </asp:RadioButtonList>
         <label for="startDate">Vælg Ankomst dag</label><br />
-        <asp:Calendar ID="starteDate" runat="server"></asp:Calendar>
+        <asp:Calendar ID="starteDate" runat="server" AutoPostBack="false" OnSelectionChanged="starteDate_SelectionChanged"></asp:Calendar>
         <label for="endDate">Vælg afrejse dag</label><br />
-        <asp:Calendar ID="endDate" runat="server"></asp:Calendar>
-       
+        <asp:Calendar ID="endDate" runat="server" AutoPostBack="false" OnSelectionChanged="endDate_SelectionChanged"></asp:Calendar>
+
         <h4>Tilvalg</h4>
-        <asp:CheckBoxList ID="CheckBoxList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged ="CheckBoxList1_SelectedIndexChanged">
+        <asp:CheckBoxList ID="CheckBoxList1" runat="server" AutoPostBack="false" OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged">
             <asp:ListItem> All-in-one (<a href="#">golf tilbud læs mere her</a>) </asp:ListItem>
             <asp:ListItem> Minibar</asp:ListItem>
             <asp:ListItem> Aircondition</asp:ListItem>
             <asp:ListItem> K&#230;ledyr</asp:ListItem>
         </asp:CheckBoxList>
-    </form>
 
-  
-    <form class="booking">
-     <h4>Om dig</h4>
+
+
+
+        <h4>Om dig</h4>
 
         <asp:Label for="firstname" runat="server" Text="Fornavn"></asp:Label><br />
         <asp:TextBox ID="firstname" runat="server"></asp:TextBox><br />
@@ -48,10 +48,14 @@
 
         <asp:CheckBox ID="accept" runat="server" />
         <asp:Label for="accept" runat="server" Text=""><a href="#">Accepter handelsbetingelser og privatlivs politik</a></asp:Label>
-
+        <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Click_submit" />
 
 
     </form>
-    
+
+
+
+
+
 
 </asp:Content>

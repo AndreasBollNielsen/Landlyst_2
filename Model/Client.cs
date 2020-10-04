@@ -13,6 +13,7 @@ namespace Landlyst_2.Model
         string email;
         int phone;
         string address;
+        string city;
         int zipcode;
         
 
@@ -23,7 +24,8 @@ namespace Landlyst_2.Model
         public int Phone { get => phone; set => phone = value; }
         public string Address { get => address; set => address = value; }
         public int Zipcode { get => zipcode; set => zipcode = value; }
-       
+        public string City { get => city; set => city = value; }
+
 
         //constructor
         public Client()
@@ -34,6 +36,7 @@ namespace Landlyst_2.Model
             phone = Phone;
             address = Address;
             zipcode = Zipcode;
+            city = City;
         }
     }
 }
