@@ -40,11 +40,13 @@ footer{
     background-color: darkgray;
 }
 
-* {
-    box-sizing: border-box;
-}
-form .booking {
+.booking{
+    clear: right;
     float: left;
     width: 50%;
-   
-} 
+}
+
+.person{
+    clear: right;
+    float: left;
+}

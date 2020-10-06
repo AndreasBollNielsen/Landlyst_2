@@ -3,7 +3,9 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
     <h3>Begynd din ferie her</h3>
-    <form class="booking">
+
+    <div class="booking">
+    <form>
         <h4>Vælg dit værelse</h4>
         <asp:RadioButtonList ID="chooseRoom" runat="server" AutoPostBack="true" OnSelectedIndexChanged ="chooseRoom_SelectedIndexChanged">
             <asp:ListItem> Enkelt værelse</asp:ListItem>
@@ -24,9 +26,10 @@
             <asp:ListItem> K&#230;ledyr</asp:ListItem>
         </asp:CheckBoxList>
     </form>
+    </div>
 
-  
-    <form class="booking">
+    <div class="person">
+    <form class="person">
      <h4>Om dig</h4>
 
         <asp:Label for="firstname" runat="server" Text="Fornavn"></asp:Label><br />
