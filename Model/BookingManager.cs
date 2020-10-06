@@ -22,17 +22,17 @@ namespace Landlyst_2.Model
             BookedRoom.Customer = Customer;
         }
 
-        
+
 
         // executes the booking with the data from room object. Using stored Procedure to add data into database
         public DataTable CreateReservation()
         {
-            SqlConnection con = new SqlConnection("data source = (local); initial catalog =test; integrated security = sspi") ;
-           
-            if(BookedRoom != null)
+            SqlConnection con = new SqlConnection("data source = (local); initial catalog =test; integrated security = sspi");
+
+            if (BookedRoom != null)
             {
                 //prepare data for database
-                
+
 
                 //run stored procedure 
                 con.Open();
@@ -47,6 +47,29 @@ namespace Landlyst_2.Model
                 //add warning that nothing has been filled out
                 Debug.WriteLine("please fill out all information to proceed booking");
                 return null;
+            }
+        }
+
+        //get booking price for room type
+        public float Roomprice()
+        {
+            SqlConnection con = new SqlConnection("data source = (local); initial catalog =test; integrated security = sspi");
+
+            if (BookedRoom != null)
+            {
+                //run stored procedure that retrieves price on room
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SelectAll", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlDataReader reader = cmd.ExecuteReader();
+                float price = reader.GetFloat(0);
+                return price;
+            }
+            else
+            {
+                //add warning that nothing has been filled out
+                Debug.WriteLine("please fill out all information to proceed booking");
+                return 0;
             }
         }
     }
