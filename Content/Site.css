@@ -40,13 +40,15 @@ footer{
     background-color: darkgray;
 }
 
-.booking{
+.booking, .person{
     clear: right;
     float: left;
     width: 50%;
+    margin-bottom: 100px;
+    margin-top: 50px;
 }
 
 .person{
-    clear: right;
-    float: left;
+    padding-left:70px;
+    border-left: thin;
 }
