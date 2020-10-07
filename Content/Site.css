@@ -52,3 +52,10 @@ footer{
     padding-left:70px;
     border-left: thin;
 }
+
+.contactForm {
+}
+.contactForm span, 
+.contactForm .submit{
+    margin-top: 20px;
+}
