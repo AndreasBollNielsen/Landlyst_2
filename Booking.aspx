@@ -1,9 +1,12 @@
 ﻿<%@ Page Title="Booking" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Booking.aspx.cs" Inherits="Landlyst_2.Booking" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
+    
+
+    <form>
+        <h2><%: Title %>.</h2>
     <h3>Begynd din ferie her</h3>
-    <form class="booking">
+        <div class="booking">
         <h4>Vælg dit værelse</h4>
         <asp:RadioButtonList ID="chooseRoom" runat="server" AutoPostBack="true" OnSelectedIndexChanged="chooseRoom_SelectedIndexChanged">
             <asp:ListItem> Enkelt værelse</asp:ListItem>
@@ -23,10 +26,10 @@
             <asp:ListItem> Aircondition</asp:ListItem>
             <asp:ListItem> K&#230;ledyr</asp:ListItem>
         </asp:CheckBoxList>
+            </div>
 
 
-
-
+        <div class="person">
         <h4>Om dig</h4>
 
         <asp:Label for="firstname" runat="server" Text="Fornavn"></asp:Label><br />
@@ -47,10 +50,11 @@
         <asp:TextBox ID="comment" runat="server"></asp:TextBox><br />
 
         <asp:CheckBox ID="accept" runat="server" />
-        <asp:Label for="accept" runat="server" Text=""><a href="#">Accepter handelsbetingelser og privatlivs politik</a></asp:Label>
+        <asp:Label for="accept" runat="server" Text=""><a href="#">Accepter handelsbetingelser og privatlivs politik</a></asp:Label><br />
+            <br />
         <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Click_submit" />
 
-
+        </div>
     </form>
 
 

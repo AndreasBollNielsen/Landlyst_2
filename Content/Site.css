@@ -40,11 +40,22 @@ footer{
     background-color: darkgray;
 }
 
-* {
-    box-sizing: border-box;
-}
-form .booking {
+.booking, .person{
+    clear: right;
     float: left;
     width: 50%;
-   
-} 
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+.person{
+    padding-left:70px;
+    border-left: thin;
+}
+
+.contactForm {
+}
+.contactForm span, 
+.contactForm .submit{
+    margin-top: 20px;
+}
