@@ -13,6 +13,8 @@ namespace Landlyst_2
     {
 
         public BookingManager manager;
+        public RoomType.Type CurrentType;
+        public float Price;
         protected void Page_Load(object sender, EventArgs e)
         {
             manager = new BookingManager();
@@ -26,25 +28,25 @@ namespace Landlyst_2
         //select room type & 
         protected void chooseRoom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            manager.BookedRoom.Roomtype = (RoomType.Type)chooseRoom.SelectedIndex;
+            CurrentType = (RoomType.Type)chooseRoom.SelectedIndex;
 
             //enable/disable extra options
-            if (manager.BookedRoom.Roomtype == RoomType.Type.singleRoom)
+            if (CurrentType == RoomType.Type.singleRoom)
             {
                 Disableoptions(true, false, true, false);
                 SetOptions(false, true, false, false);
             }
-            else if (manager.BookedRoom.Roomtype == RoomType.Type.DoubleRoom)
+            else if (CurrentType == RoomType.Type.DoubleRoom)
             {
                 Disableoptions(true, false, true, false);
                 SetOptions(false, true, false, false);
             }
-            else if (manager.BookedRoom.Roomtype == RoomType.Type.LuxuryRoom)
+            else if (CurrentType == RoomType.Type.LuxuryRoom)
             {
                 Disableoptions(true, false, false, false);
                 SetOptions(false, true, true, false);
             }
-            else if (manager.BookedRoom.Roomtype == RoomType.Type.Suite)
+            else if (CurrentType == RoomType.Type.Suite)
             {
                 Disableoptions(true, false, false, true);
                 SetOptions(false, true, true, false);
@@ -128,6 +130,7 @@ namespace Landlyst_2
         {
             manager = new BookingManager();
             manager.CreateRoom();
+            manager.BookedRoom.Roomtype = (RoomType.Type)chooseRoom.SelectedIndex;
             manager.BookedRoom.CheckinDate = starteDate.SelectedDate.ToString();
             manager.BookedRoom.CheckOutDate = endDate.SelectedDate.ToString();
 
