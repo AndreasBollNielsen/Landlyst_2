@@ -15,6 +15,24 @@ namespace Landlyst_2
     {
 
         /// <summary>
+        /// Rnumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Rnumber;
+
+        /// <summary>
+        /// RoomNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label RoomNumber;
+
+        /// <summary>
         /// chooseRoom control.
         /// </summary>
         /// <remarks>
@@ -42,13 +60,13 @@ namespace Landlyst_2
         protected global::System.Web.UI.WebControls.Calendar endDate;
 
         /// <summary>
-        /// CheckBoxList1 control.
+        /// RoomOptions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
+        protected global::System.Web.UI.WebControls.CheckBoxList RoomOptions;
 
         /// <summary>
         /// firstname control.
@@ -130,6 +148,15 @@ namespace Landlyst_2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox accept;
+
+        /// <summary>
+        /// Price control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Price;
 
         /// <summary>
         /// Button1 control.

@@ -8,6 +8,8 @@
     <h3>Begynd din ferie her</h3>
         <div class="booking">
         <h4>Vælg dit værelse</h4>
+        <label for="RoomNumber" ID="Rnumber" runat="server">værelsesnummber:</label>
+        <asp:label ID="RoomNumber" runat="server"></asp:label>
         <asp:RadioButtonList ID="chooseRoom" runat="server" AutoPostBack="true" OnSelectedIndexChanged="chooseRoom_SelectedIndexChanged">
             <asp:ListItem> Enkelt værelse</asp:ListItem>
             <asp:ListItem> Dobbelt værelse</asp:ListItem>
@@ -15,12 +17,12 @@
             <asp:ListItem> Suite</asp:ListItem>
         </asp:RadioButtonList>
         <label for="startDate">Vælg Ankomst dag</label><br />
-        <asp:Calendar ID="starteDate" runat="server" AutoPostBack="false" OnSelectionChanged="starteDate_SelectionChanged"></asp:Calendar>
+        <asp:Calendar ID="starteDate" runat="server" OnSelectionChanged="Date_SelectionChanged"></asp:Calendar>
         <label for="endDate">Vælg afrejse dag</label><br />
-        <asp:Calendar ID="endDate" runat="server" AutoPostBack="false" OnSelectionChanged="endDate_SelectionChanged"></asp:Calendar>
+        <asp:Calendar ID="endDate" runat="server" OnSelectionChanged="Date_SelectionChanged"></asp:Calendar>
 
         <h4>Tilvalg</h4>
-        <asp:CheckBoxList ID="CheckBoxList1" runat="server" AutoPostBack="false" OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged">
+        <asp:CheckBoxList ID="RoomOptions" runat="server" AutoPostBack="true" OnSelectedIndexChanged="RoomOptions_SelectedIndexChanged">
             <asp:ListItem> All-in-one (<a href="#">golf tilbud læs mere her</a>) </asp:ListItem>
             <asp:ListItem> Minibar</asp:ListItem>
             <asp:ListItem> Aircondition</asp:ListItem>
@@ -52,6 +54,8 @@
         <asp:CheckBox ID="accept" runat="server" />
         <asp:Label for="accept" runat="server" Text=""><a href="#">Accepter handelsbetingelser og privatlivs politik</a></asp:Label><br />
             <br />
+        <asp:Label for="Price" runat="server" Text="Label">Pris:</asp:Label>
+            <asp:Label ID="Price" runat="server" Text="Label">0</asp:Label>
         <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Click_submit" />
 
         </div>

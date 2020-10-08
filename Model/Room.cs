@@ -19,6 +19,7 @@ namespace Landlyst_2.Model
         bool pet;
         bool golf;
         RoomType.Type roomtype;
+        int roomId;
 
         // properties
         public Client Customer { get => customer; set => customer = value; }
@@ -31,6 +32,7 @@ namespace Landlyst_2.Model
         public bool Pet { get => pet; set => pet = value; }
         public bool Golf { get => golf; set => golf = value; }
         public RoomType.Type Roomtype { get => roomtype; set => roomtype = value; }
+        public int RoomId { get => roomId; set => roomId = value; }
 
         //constructor
         public Room()
@@ -44,6 +46,7 @@ namespace Landlyst_2.Model
             aircondition = Aircondition;
             pet = Pet;
             roomtype = Roomtype;
+            roomId = RoomId;
         }
     }
 }

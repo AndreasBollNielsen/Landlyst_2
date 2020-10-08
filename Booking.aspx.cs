@@ -14,7 +14,8 @@ namespace Landlyst_2
 
         public BookingManager manager;
         public RoomType.Type CurrentType;
-        public float Price;
+
+        public int RoomID;
         protected void Page_Load(object sender, EventArgs e)
         {
             manager = new BookingManager();
@@ -23,118 +24,164 @@ namespace Landlyst_2
 
         }
 
-
-
-        //select room type & 
+        //select room type & set room number
         protected void chooseRoom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CurrentType = (RoomType.Type)chooseRoom.SelectedIndex;
-
+            CurrentType = (RoomType.Type)chooseRoom.SelectedIndex + 1;
+            Debug.WriteLine("selected index " + chooseRoom.SelectedIndex);
+            int currentAddId = 1;
+           
             //enable/disable extra options
             if (CurrentType == RoomType.Type.singleRoom)
             {
-                Disableoptions(true, false, true, false);
+                RoomNumber.Text = "1";
+                Enableoptions(true, false, true, false);
                 SetOptions(false, true, false, false);
+               
+                //check if aircondition is enabled for single room
+                if (RoomOptions.Items[2].Selected)
+                {
+                    RoomNumber.Text = "2";
+                    currentAddId = 3;
+                }
+                else if (RoomOptions.Items[0].Selected)
+                {
+                    currentAddId = 1;
+                }
+                currentAddId = 2;
             }
             else if (CurrentType == RoomType.Type.DoubleRoom)
             {
-                Disableoptions(true, false, true, false);
+                RoomNumber.Text = "3";
+                Enableoptions(true, false, true, false);
                 SetOptions(false, true, false, false);
+                currentAddId = 2;
             }
             else if (CurrentType == RoomType.Type.LuxuryRoom)
             {
-                Disableoptions(true, false, false, false);
+                RoomNumber.Text = "4";
+                Enableoptions(false, false, false, false);
                 SetOptions(false, true, true, false);
+                currentAddId = 5;
             }
             else if (CurrentType == RoomType.Type.Suite)
             {
-                Disableoptions(true, false, false, true);
+                RoomNumber.Text = "5";
+                Enableoptions(false, false, false, true);
                 SetOptions(false, true, true, false);
+
+                currentAddId = 5;
             }
+
+            UpdatePrice(currentAddId);
         }
 
         //update room options data
-        protected void CheckBoxList1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void RoomOptions_SelectedIndexChanged(object sender, EventArgs e)
         {
-            manager.BookedRoom.Golf = CheckBoxList1.Items[0].Selected;
-            manager.BookedRoom.Minibar = CheckBoxList1.Items[1].Selected;
-            manager.BookedRoom.Aircondition = CheckBoxList1.Items[2].Selected;
-            manager.BookedRoom.Pet = CheckBoxList1.Items[3].Selected;
-            UpdatePrice();
+            /*
+            CheckBoxList1.Items[0].Selected = Golf
+            CheckBoxList1.Items[1].Selected = minibar
+            CheckBoxList1.Items[2].Selected = aircondition
+            CheckBoxList1.Items[3].Selected = pet
+            */
+
+            //update price when checkboxes are changed
+            if (RoomOptions.Items[2].Selected)
+            {
+                //update price with aircondition
+                CurrentType = (RoomType.Type)chooseRoom.SelectedIndex + 1;
+                UpdatePrice(3);
+            }
+            else if (!RoomOptions.Items[2].Selected)
+            {
+                //update price without aircondition
+                CurrentType = (RoomType.Type)chooseRoom.SelectedIndex + 1;
+                UpdatePrice(2);
+            }
+
+            //update price for suite
+            if (RoomOptions.Items[3].Selected)
+            {
+                //update price when pet is enabled
+                CurrentType = (RoomType.Type)chooseRoom.SelectedIndex + 1;
+                UpdatePrice(4);
+            }
+            else if (!RoomOptions.Items[3].Selected)
+            {
+                //update price when pet is disabled
+                CurrentType = (RoomType.Type)chooseRoom.SelectedIndex + 1;
+                UpdatePrice(5);
+            }
+
         }
 
         //disable user input for extra options
-        private void Disableoptions(bool golf, bool minibar, bool aircondition, bool pet)
+        private void Enableoptions(bool golf, bool minibar, bool aircondition, bool pet)
         {
             // set all in one
-            CheckBoxList1.Items[0].Enabled = golf;
+            RoomOptions.Items[0].Enabled = golf;
             // set minibar
-            CheckBoxList1.Items[1].Enabled = minibar;
+            RoomOptions.Items[1].Enabled = minibar;
             //set aircondition
-            CheckBoxList1.Items[2].Enabled = aircondition;
+            RoomOptions.Items[2].Enabled = aircondition;
             // set pet
-            CheckBoxList1.Items[3].Enabled = pet;
+            RoomOptions.Items[3].Enabled = pet;
         }
 
-        /// <summary>
         /// set extra options in gui
-        /// </summary>
-        /// <param name="golf">enable golf option</param>
-        /// <param name="minibar">enable the minibar</param>
-        /// <param name="aircondition">enable aircondition</param>
-        /// <param name="pet">enable pet option</param>
         private void SetOptions(bool golf, bool minibar, bool aircondition, bool pet)
         {
             // set all in one
-            CheckBoxList1.Items[0].Selected = golf;
+            RoomOptions.Items[0].Selected = golf;
             // set minibar
-            CheckBoxList1.Items[1].Selected = minibar;
+            RoomOptions.Items[1].Selected = minibar;
             //set aircondition
-            CheckBoxList1.Items[2].Selected = aircondition;
+            RoomOptions.Items[2].Selected = aircondition;
             // set pet
-            CheckBoxList1.Items[3].Selected = pet;
+            RoomOptions.Items[3].Selected = pet;
 
-            //run method that updates the price
-            UpdatePrice();
         }
 
-        private void UpdatePrice()
+        
+
+        //update price on website
+        private void UpdatePrice(int addid)
         {
-            Debug.WriteLine("price updated");
-        }
-        private void updateCustomer()
-        {
-            Debug.WriteLine($"first name {manager.Customer.Firstname}\n" +
-                $"last name {manager.Customer.Lastname}\n" +
-                $"address {manager.Customer.Address}\n" +
-                $"zipcode {manager.Customer.Zipcode}\n" +
-                $"city {manager.Customer.City}\n" +
-                $"email {manager.Customer.Email}\n" +
-                $"phone {manager.Customer.Phone}\n" +
-                $"arrival date {manager.BookedRoom.CheckinDate} departure date {manager.BookedRoom.CheckOutDate}");
-        }
+            manager = new BookingManager();
+            manager.CurrentType = (int)CurrentType;
+            manager.CurrentAddId = addid;
+            int price = manager.Roomprice();
+            string outputprice = price.ToString() + " kr";
+            //check discount
+            if(manager.CurrentType == 3)
+            {
+                DateTime arrivalDate = starteDate.SelectedDate;
+                DateTime departureDate = endDate.SelectedDate;
+                double totaldays = (departureDate - arrivalDate).TotalDays;
+               if(totaldays > 5)
+                {
+                    double discount = price / 100 * 20;
+                    price = price - (int)discount;
+                    outputprice = price.ToString() + $" discount({discount}) kr";
+                }
+            }
 
-        protected void starteDate_SelectionChanged(object sender, EventArgs e)
-        {
-            manager.BookedRoom.CheckinDate = starteDate.SelectedDate.ToString();
 
-        }
-
-        protected void endDate_SelectionChanged(object sender, EventArgs e)
-        {
-            manager.BookedRoom.CheckOutDate = endDate.SelectedDate.ToString();
-
+            Price.Text = outputprice;
         }
 
+        // click submit to create the booking
         protected void Click_submit(object sender, EventArgs e)
         {
             manager = new BookingManager();
             manager.CreateRoom();
             manager.BookedRoom.Roomtype = (RoomType.Type)chooseRoom.SelectedIndex;
+            manager.BookedRoom.RoomId = int.Parse(RoomNumber.Text);
             manager.BookedRoom.CheckinDate = starteDate.SelectedDate.ToString();
             manager.BookedRoom.CheckOutDate = endDate.SelectedDate.ToString();
 
-
+            Debug.WriteLine(manager.BookedRoom.RoomId);
             manager.Customer.Firstname = firstname.Text;
             manager.Customer.Lastname = lastname.Text;
             manager.Customer.Address = address.Text;
@@ -142,7 +189,19 @@ namespace Landlyst_2
             manager.Customer.Zipcode = int.Parse(zipCode.Text);
             manager.Customer.City = city.Text;
             manager.Customer.Email = email.Text;
-            updateCustomer();
+            bool booked = manager.CreateReservation();
+            Debug.WriteLine($"is the room booked: {booked}");
+
+        }
+
+        //update price when dates change
+        protected void Date_SelectionChanged(object sender, EventArgs e)
+        {
+            if(chooseRoom.SelectedIndex > 0)
+            {
+                chooseRoom_SelectedIndexChanged(sender, e);
+            }
+            
         }
     }
 }
